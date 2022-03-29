@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Expenses from "./component/Expenses";
 
-function App() {
+const App = () => {
   const expense = [
     {
       title: "Senpai",
@@ -26,14 +26,10 @@ function App() {
     },
   ];
 
-  return (
-    <div>
-      <h2>Let's get started!</h2>
-      <Expenses
-        items={expense} 
-      />
-    </div>
-  );
+  return React.createElement('div', {}, 
+    React.createElement('h2', {}, "Let's get started!" ),
+    React.createElement(Expenses, {items: expense})
+  )
 }
 
 export default App;
